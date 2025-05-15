@@ -36,7 +36,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
       body: JSON.stringify(userInfo),
     };
 
-    const { data } = await axios.post(` https://salepost.onrender.com/api/orders`, order, config);
+    const { data } = await axios.post(`https://crudbackend-up6i.onrender.com/api/orders`, order, config);
     dispatch({ type: ORDER_CREATE_SUCCESS, payload: data });
     dispatch({ type: CART_CLEAR_ITEMS, payload: data });
 
@@ -76,7 +76,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
       body: JSON.stringify(userInfo),
     };
 
-    const { data } = await axios.get(` https://salepost.onrender.com/api/orders/${id}`, config);
+    const { data } = await axios.get(`https://crudbackend-up6i.onrender.com/api/orders/${id}`, config);
     dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data });
 
     localStorage.removeItem("cartItems");
@@ -115,7 +115,7 @@ export const payOrder =
       };
 
       const { data } = await axios.put(
-        ` /api/orders/${orderId}/pay`,
+        ` https://crudbackend-up6i.onrender.com/api/orders/${orderId}/pay`,
         paymentResult,
         config
       );
@@ -153,7 +153,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
       body: JSON.stringify(userInfo),
     };
 
-    const { data } = await axios.get(`https://salepost.onrender.com/api/orders/`, config);
+    const { data } = await axios.get(`https://crudbackend-up6i.onrender.com/api/orders/`, config);
     dispatch({ type: ORDER_LIST_MY_SUCCESS, payload: data });
   } catch (error) {
     const message =
