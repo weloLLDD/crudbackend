@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import Rating from "./Rating";
+import  { useEffect } from "react";
+import { Link } from "react-router-dom"; 
 import Pagination from "./pagination";
 import { useDispatch, useSelector } from "react-redux";
 import { listProduct } from "../../Redux/Action/ProductAction";
